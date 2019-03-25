@@ -6,6 +6,19 @@ using Images
 # z^2 = x^2 + 2xyi - y^2 = (x^2 - y^2) + (2xy) i
 function iteracao_mandelbrot(cx, cy; max_iter = 40)
   iter = 0
+  x=cx
+  y=cy
+  while iter<=39
+    tx=x
+    x=x^2-y^2+cx
+    y=2*tx*y+cy
+
+    iter+=1
+
+  end
+
+
+
 
   # AQUI
 
@@ -33,4 +46,7 @@ function mandelbrot(N)
   save("mandelbrot.jpg", imagem')
 end
 
+
 mandelbrot(1000)
+
+
